@@ -1,38 +1,48 @@
-from flask import Blueprint
-from flask import render_template, url_for, flash, redirect, request
+from flask import Blueprint, jsonify
+from flask import url_for
 import time
 import json
 
 web = Blueprint('web', __name__)
 
-
-
-@web.route('/hello', methods =['GET', 'PUT'])
-def my_index():
-    # todo flask_token should be a array of image, title dict
-    # this will come through flask-s3
-
-    json_object = {'title': "Amazon Pets", 'image': 'static/images/pets//pets_desktop_hero_image.png', "href": "#"}
-    # str = []
-    # for c in content:
-    #     c = json.dumps(c)
-    #     str.append(c)
-    # #     content = json.loads(str)
-    # flask_token = json.loads(str)
-    # # content = json.dumps(content)
-    token = json.dumps(json_object)
-    return render_template("index.html", flask_token=[{"title":"hello world"}])
-
-@web.route('/Gallery')
+# https://www.youtube.com/watch?v=9N6a-VLBa2I
+@web.route('/gallery', methods=['GET', 'POST'])
 def gallery():
-    content = [
-    {'title': "Prime Day", 'image':  './flask_api/static/images/prime_day//pdc_desktop_hero_image.png', "href": "#"},
-    {'title': "OFT", 'image': './flask_apistatic/images/oprah_fav//oft_desktop_hero_image.png', "href": "#"},
-    {'title': "Flair", 'image': './flask_apistatic/images/flair//flair_desktop_hero_image.png', "href": "#"},
-    {'title': "Amazon Pets", 'image': './flask_apistatic/images/pets//pets_desktop_hero_image.png', "href": "#"}
-]
-    # todo flask_token = dict{}
-    return {'content': content }
+    d =  {
+            "title": "Prime Day",
+            "image": "/flask_api/static/images/prime_day//pdc_desktop_hero_image.png",
+            "href": "#"
+            }
+
+    data = [
+
+         {"title": "Prime Day",
+          "image": "/images/prime_day/pdc_desktop_hero_image.png",
+          "href": "#"}
+    ,
+        {"title": "OFT",
+         "image": "/images/oprah_fav/oft_desktop_hero_image.png",
+         "href": "#"}
+         ,
+        {"title": "Flair",
+         "image": "/images/flair/flair_desktop_hero_image.png",
+         "href": "#"}
+         ,
+        {"title": "Amazon Pets",
+         "image": "/images/pets/pets_desktop_hero_image.png",
+         "href": "#"}
+    ]
+    # todo get json object from s3
+    for d in data:
+        d['image'] = url_for('static', filename=d['image'])
+    return {"data": data}
+
+@web.route('/project', methods=['GET', 'POST'])
+def static(query):
+    print('calling static files')
+    asset = url_for('static', query)
+    print('asset:  '+ asset)
+    return asset
 
 @web.route('/time')
 def get_current_time():

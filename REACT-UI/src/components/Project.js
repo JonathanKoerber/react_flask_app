@@ -1,28 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled, {css} from 'styled-components';
 
-const Wrapper = styled.section`
-    padding: 0;
-    width: 100%;
-    height: auto;
 
-@media only screen and (min-width: 992px){
-    width: 50%;
-    height: auto;
-      &:hover${Image}{
-        opacity: .7
-    }
 
-}
-    `;
-const Content = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
 
-`;
 const Title = styled.h1`
     font-family: "Times New Roman", serif;
     align-self: center;
@@ -31,15 +12,23 @@ const Title = styled.h1`
     font-weight: bolder;
     color: white;
     position: absolute;
-    padding: 8%;
-@media only screen and (min-width: 992px){
-        display: none;
+    padding: 4%;
+    opacity: 1;
+@media only screen and (min-width: 575.98px){
+    font-size: 2.5em;
+    padding: 5%;
+}
+@media only screen and (min-width: 768px){
     font-size: 3em;
-    ${Wrapper}:hover & {
+    padding: 7%;
+}
+@media only screen and (min-width: 992px){
     display: block;
-    }
+    font-size: 3.2em;
+  
     }
 `;
+
 const Image = styled.img`
     width: 100%;
     max-width: 100%;
@@ -50,15 +39,55 @@ const Image = styled.img`
     background-color: #000000;
     margin: 0;
     padding: 0;
+@media only screen and (min-width: 992px){
+   
+    }
+    `;
+const Content = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+`;
+const Wrapper = styled.section`
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -.85%;
+@media only screen and (min-width: 575.98px){
+    margin-bottom: -.75%;
+}
+@media only screen and (min-width: 768px){
+    margin-bottom: .-40%;
+}
+@media only screen and (min-width: 992px){
+    width: 50%;
+    height: auto;
+    margin-bottom: -.2%;
+    ${Image}:hover & {
+    opacity: .7;
+    }
+  
+    ${Title}:hover & {
+    display: block;
+    color: red;
+    }
+   
+}
     `;
 
-const Project = (props) => (
-// <Wrapper styles={{ backgroundImage:`url(${props.project_img})` }}>
+
+function Project(props) {
+    const project = props.project;
+return(
     <Wrapper>
-    <Content>
-        <Title>{props.project_title}</Title>
-    </Content>
-         <Image src={props.project_img}/>
-</Wrapper>
+        <Content>
+            <Title>{project.title}</Title>
+        </Content>
+        <Image src={project.image} />
+    </Wrapper>
 )
+}
 export default Project;
