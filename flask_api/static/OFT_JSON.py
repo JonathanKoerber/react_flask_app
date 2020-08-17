@@ -1,7 +1,7 @@
 
-oft = {
+oft = [
     {"hero":[
-        {"image": "images/oprah_fav/oft_desktop_hero_image.png"},
+        {"image": "./images/oprah_fav/oft_desktop_hero_image.png"},
         {"title": "OFT 2019"}
     ]},
     {"main":[
@@ -34,13 +34,12 @@ oft = {
       (O magazine) on the due date.'''},
             {"image_section":[
                 {"blue_back": [
-                    {"image_full": "images/oprah_fav/Image_1.png"},
-                    {"image_full": "images/oprah_fav/Image_2.png"}
+                    {"image": "./images/oprah_fav/Image_1.png"},
+                    {"image": "./images/oprah_fav/Image_2.png"}
                 ]}
             ]}
         ]},
         {"underline_section":[
-            {"image_section_reverse":[
                 {"thin_column":[
                     {"section_title": "Dynamic Adds"},
                     {"paragraph": '''  Due to budget constraints (and life challenges), I was not able to attend the photo shoot. However, I armed
@@ -53,11 +52,10 @@ oft = {
                     {"image_tall": "images/oprah_fav/Gif_MP4/2019_q3_us_oft_300x600_F.gif"}
                 ]},
                 {"weird_image_grid":[
-                    {"image_one": "images/oprah_fav/HTML5_concepts.png"},
-                    {"image_two": "images/oprah_fav/Gif_MP4/2019_q3_us_oft_728x90_F.gif"},
-                    {"image_three": "images/oprah_fav/Gif_MP4/2019_q4_us_oft_970x250_F.gif"}
+                    {"image_one": "./images/oprah_fav/HTML5_concepts.png"},
+                    {"image_two": "./images/oprah_fav/Gif_MP4/2019_q3_us_oft_728x90_F.gif"},
+                    {"image_three": "./images/oprah_fav/Gif_MP4/2019_q4_us_oft_970x250_F.gif"}
                 ]}
-            ]}
         ]},
         {"underline_section": [
             {"section_title": "Social"},
@@ -67,8 +65,8 @@ oft = {
       researched, concepted and consulted social experts and delivered 3 MP4s. 1 to be used on both Facebook and Instagram
       and the other two were specific for each channel. In addition, we also gave them the static images they requested.'''},
             {"video": [
-                {"poster": "images/oprah_fav/desktop_project_detail_lg_imag.png"},
-                {"source": "images/oprah_fav/Gif_MP4/OFT_social.mp4"}
+                {"poster": "./images/oprah_fav/desktop_project_detail_lg_imag.png"},
+                {"source": "./images/oprah_fav/Gif_MP4/OFT_social.mp4"}
             ]}
         ]},
         {"underline_section": [
@@ -83,12 +81,13 @@ oft = {
         {"underline_section": [
             {"section_title": "Customer Journey"},
             {"video":[
-                {"poster": "images/oprah_fav/desktop_project_detail_lg_imag_y.png"},
-                {"source": "images/oprah_fav/Gif_MP4/OFT_journey.mp4"}
+                {"poster": "./images/oprah_fav/desktop_project_detail_lg_imag_y.png"},
+                {"source": "./images/oprah_fav/Gif_MP4/OFT_journey.mp4"}
             ]}
         ]}
-    ]}
+    ]
 }
+    ]
 flair = {}
 prime = {}
 pets = {}

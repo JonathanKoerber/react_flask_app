@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 
 const Wrapper = styled.section`
-    width: 100%;
     overflow: hidden;
     background: black;
     padding: 4% 10% 0% 10%;

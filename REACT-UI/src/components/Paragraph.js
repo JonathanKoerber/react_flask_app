@@ -9,8 +9,8 @@ const Text = styled.p`
   padding: 1%;
     `;
 
-const Paragraph = (props) => {
+const Paragraph = (props) => (
     <Text>{props.text}</Text>
-}
+)
 
 export default Paragraph;

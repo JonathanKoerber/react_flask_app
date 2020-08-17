@@ -1,16 +1,20 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import Paragraph from "./Paragraph";
+import SectionTitle from "./SectionTitle";
+
 const Wrapper = styled.section`
     margin: 5% 0 5% 0;
-    padding: 0 5% 2% 5%
+    padding: 0 5% 2% 5%;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 `;
+
 const Column = styled.div`
     padding: 0;
     width: 50%;
     height: 100%;
+    
 `;
 const Title = styled.div`
     text-align: left;
@@ -21,20 +25,30 @@ const Title = styled.div`
     margin: 0;
 `;
 
-const Team = (props) => {
+const Team = (props) => (
     <Wrapper>
-        <Column>
-            <Title>My Role</Title>
-            {props.role.map(r=> {
-                <Paragraph>{r}</Paragraph>
+          {props.data.map((d, index)=>{
+               if(d.role) {
+                  return (
+                      <Column>
+                            <SectionTitle title="My Role"/>
+                            {d.role.map((r, index)=>{
+                                   return <Paragraph text={r}/>
+                            })}
+                      </Column>
+                  )
+               }else if(d.members){
+                  return (
+                        <Column>
+                            <SectionTitle title="Team" />
+                            {d.members.map((r, index)=>{
+                                   return <Paragraph text={r}/>
+                            })}
+                        </Column>
+                  )
+               }
             })}
-            {props.role}
-            </Column>
-        <Column>
-            <Title>Team</Title>
-            {props.team.map(t=>{
-                <Paragraph>t</Paragraph>
-            })}
-        </Column>
     </Wrapper>
-}
+)
+
+export default Team;

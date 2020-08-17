@@ -5,20 +5,11 @@ import Project from "./Project";
 const Figure = styled.figure`
     margin: 0;
     padding: 0;
-     display: flex;
+    display: flex;
     flex-flow: row wrap;
 
 `;
-const Row = styled.div`
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-@media only screen and (min-width: 992px){
-    display: flex;
-    flex-direction: row;
-    }
-`;
+
 
 function Gallery() {
     const [projects , setProjects] = useState([]);
@@ -32,7 +23,6 @@ function Gallery() {
 
     return(
               <Figure>
-
                       {projects.map((p, index)=>{
                           return <Project project={p} />
                   })}

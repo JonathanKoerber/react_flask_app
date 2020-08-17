@@ -1,28 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled, {css} from 'styled-components';
 
-const Container = styled.div`
-    max-width: 100%;
-    width: 100%;    
-@media screen and (min-width: 1199px){
-    max-width: 50%;
-    width: 50%;
-    height: auto'
-`;
 
-const Image = style.img`
+
+const Image = styled.img`
     width: auto; 
-    height: 100%;
-    max-height: 95%;
+    height: 60%;
     overflow: hidden;
-    
+    padding: 2%;
+   @media screen and (min-width: 1199px){
+   padding-top: 50%;
+    width: 100%;
+    height: auto;
+    align-self: baseline;
 `;
 
-const ImageTall = (props) => {
-    <Container>
-        <Image  src={props.image} />
-    </Container>
+const ImageTall = (props) => (
 
-}
+        <Image  src={props.image} />
+
+)
 
 export default ImageTall;

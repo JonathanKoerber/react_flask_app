@@ -8,9 +8,9 @@ const Image = styled.img`
     overflow: hidden;
 `;
 
-const ImageFull = (props) =>{
+const ImageFull = (props) =>(
     <Image src={props.image} />
 
-}
+)
 
 export default ImageFull;

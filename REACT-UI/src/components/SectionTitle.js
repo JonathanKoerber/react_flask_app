@@ -8,9 +8,10 @@ font-size: 30px;
 color: #000002;
 font-weight: lighter;
 margin: 0;
-`
-const SectionTitle=(props)=>{
+`;
+
+const SectionTitle = (props) => (
     <Title>{props.title}</Title>
-}
+)
 
 export default SectionTitle;
