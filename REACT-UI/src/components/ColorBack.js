@@ -6,7 +6,7 @@ import ImageFull from "./ImageFull";
 const Wrapper = styled.div`
     background-color: #e3f7f7;
     padding: 8% 2% 8% 2%;
-    margin-bottom: 6%;
+    margin-bottom: 6%;  
     `;
 const Row = styled.div`
     padding: 0;
@@ -24,7 +24,7 @@ const ColorBack = (props) =>(
       <Row>
           {props.image.map((i,index)=> {
               if (i.image) {
-              return <ImageFull image={i.image}/>
+              return <ImageFull src={i.image}/>
           }
           })}
       </Row>

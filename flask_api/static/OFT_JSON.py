@@ -1,7 +1,7 @@
 
 oft = [
     {"hero":[
-        {"image": "./images/oprah_fav/oft_desktop_hero_image.png"},
+        {"image": "./static/images/oprah_fav/oft_desktop_hero_image.png"},
         {"title": "OFT 2019"}
     ]},
     {"main":[
@@ -17,7 +17,7 @@ oft = [
                 {"role": [
                    "Visual Design & Motion Design"
                 ]},
-                {"team":[
+                {"members":[
                     "Heather Mounsey - Creative Director",
                     "Allison Wagner - Photo Art Director",
                     "Katie Bren - Lead Design & Art Director",
@@ -32,14 +32,14 @@ oft = [
       notes passed on by our producer. I assisted only as an extra pair of eyes when reviewing proofs and offering critique.
       Upon, receiving mechanicals I proofed them for any potential errors and uploaded final mechanicals to Hearst
       (O magazine) on the due date.'''},
-            {"image_section":[
-                {"blue_back": [
-                    {"image": "./images/oprah_fav/Image_1.png"},
-                    {"image": "./images/oprah_fav/Image_2.png"}
+
+                {"color_back": [
+                    {"image": "./static/images/oprah_fav/Image_1.png"},
+                    {"image": "./static/images/oprah_fav/Image_2.png"},
+                    {"color": "#e3f7f7"}
                 ]}
-            ]}
         ]},
-        {"underline_section":[
+        {"underline_section_reverse":[
                 {"thin_column":[
                     {"section_title": "Dynamic Adds"},
                     {"paragraph": '''  Due to budget constraints (and life challenges), I was not able to attend the photo shoot. However, I armed
@@ -49,12 +49,12 @@ oft = [
         were done in two days. After retouch was completed and assets where masked in individual layers, I utilized Animate
         CC to create motion graphics in multiple sizes. Depending on the size of the creative different assets we used. I included
         a hover state for each graphic (where applicable) to tie in with our “sparkle” onsite creative.'''},
-                    {"image_tall": "images/oprah_fav/Gif_MP4/2019_q3_us_oft_300x600_F.gif"}
+                    {"image_tall": "./static/images/oprah_fav/Gif_MP4/2019_q3_us_oft_300x600_F.gif"}
                 ]},
                 {"weird_image_grid":[
-                    {"image_one": "./images/oprah_fav/HTML5_concepts.png"},
-                    {"image_two": "./images/oprah_fav/Gif_MP4/2019_q3_us_oft_728x90_F.gif"},
-                    {"image_three": "./images/oprah_fav/Gif_MP4/2019_q4_us_oft_970x250_F.gif"}
+                    {"image_one": "./static/images/oprah_fav/HTML5_concepts.png"},
+                    {"image_two": "./static/images/oprah_fav/Gif_MP4/2019_q3_us_oft_728x90_F.gif"},
+                    {"image_three": "./static/images/oprah_fav/Gif_MP4/2019_q4_us_oft_970x250_F.gif"}
                 ]}
         ]},
         {"underline_section": [
@@ -65,8 +65,8 @@ oft = [
       researched, concepted and consulted social experts and delivered 3 MP4s. 1 to be used on both Facebook and Instagram
       and the other two were specific for each channel. In addition, we also gave them the static images they requested.'''},
             {"video": [
-                {"poster": "./images/oprah_fav/desktop_project_detail_lg_imag.png"},
-                {"source": "./images/oprah_fav/Gif_MP4/OFT_social.mp4"}
+                {"poster": "./static/images/oprah_fav/desktop_project_detail_lg_imag.png"},
+                {"source": "./static/images/oprah_fav/Gif_MP4/OFT_social.mp4"}
             ]}
         ]},
         {"underline_section": [
@@ -76,18 +76,16 @@ oft = [
       Styleguide and Oprah creative featuring top products. Below, customers could explore products and read actual Oprah
       quotes for each. I helped create onsite traffic drivers as static and animated gifs. I helped create graphics for product
       collections within the product grid and I helped create the Spanish version of the onsite experience.'''},
-            {"image_full": "images/oprah_fav/desktop_project_detail_lg_imag_x.png"}
+            {"image_full": "./static/images/oprah_fav/desktop_project_detail_lg_imag_x.png"}
         ]},
         {"underline_section": [
             {"section_title": "Customer Journey"},
             {"video":[
-                {"poster": "./images/oprah_fav/desktop_project_detail_lg_imag_y.png"},
-                {"source": "./images/oprah_fav/Gif_MP4/OFT_journey.mp4"}
+                {"poster": "./static/images/oprah_fav/desktop_project_detail_lg_imag_y.png"},
+                {"source": "./static/images/oprah_fav/Gif_MP4/OFT_journey.mp4"}
             ]}
         ]}
     ]
 }
     ]
-flair = {}
-prime = {}
-pets = {}
+

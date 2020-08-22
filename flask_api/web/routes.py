@@ -1,12 +1,16 @@
 from flask import Blueprint, jsonify
 from flask import url_for
 import time
-import json
+from flask_api.static.Flair_JSON import flair
+from flask_api.static.PDC_JSON import pdc
+from flask_api.static.PET_JSON import pet
+from flask_api.static.OFT_JSON import oft
+
 
 web = Blueprint('web', __name__)
 
 # https://www.youtube.com/watch?v=9N6a-VLBa2I
-@web.route('/gallery', methods=['GET', 'POST'])
+@web.route('/api/gallery', methods=['GET', 'POST'])
 def gallery():
     d =  {
             "title": "Prime Day",
@@ -18,32 +22,46 @@ def gallery():
 
          {"title": "Prime Day",
           "image": "/images/prime_day/pdc_desktop_hero_image.png",
-          "href": "#"}
+          "href": "/PrimeDayConcerts"}
     ,
         {"title": "OFT",
          "image": "/images/oprah_fav/oft_desktop_hero_image.png",
-         "href": "#"}
+         "href": "/OprahFavoriteThings"}
          ,
         {"title": "Flair",
          "image": "/images/flair/flair_desktop_hero_image.png",
-         "href": "#"}
+         "href": "/Flair"}
          ,
         {"title": "Amazon Pets",
          "image": "/images/pets/pets_desktop_hero_image.png",
-         "href": "#"}
+         "href": "/AmazonPets"}
     ]
     # todo get json object from s3
     for d in data:
         d['image'] = url_for('static', filename=d['image'])
     return {"data": data}
 
-@web.route('/project', methods=['GET', 'POST'])
-def static(query):
-    print('calling static files')
-    asset = url_for('static', query)
-    print('asset:  '+ asset)
-    return asset
-
 @web.route('/time')
 def get_current_time():
     return {'time': time.time()}
+
+
+@web.route('/api/pdc', methods=['GET', 'PUT'])
+def getPrime():
+
+    return {'data':pdc}
+
+@web.route('/api/oft', methods=['GET', 'PUT'])
+def getOft():
+
+    return {'data':oft}
+
+@web.route('/api/flair', methods=['GET', 'PUT'])
+def getFlair():
+
+    return {'data': flair }
+
+@web.route('/api/pets', methods=['GET', 'PUT'])
+def getPets():
+
+    return {'data': pet}

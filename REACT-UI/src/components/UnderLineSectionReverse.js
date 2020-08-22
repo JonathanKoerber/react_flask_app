@@ -5,6 +5,7 @@ import ColumnThin from "./ColumnThin";
 import SectionTitle from "./SectionTitle";
 import Paragraph from "./Paragraph";
 import ImageTall from "./ImageTall";
+import ImageFull from "./ImageFull";
 
 const Wrapper = styled.section`
    
@@ -21,17 +22,12 @@ const Wrapper = styled.section`
     }
 `;
 
-// const Row = styled.div`
-//     padding: 0;
-//     margin: 0;
-//     display: flex;
-//     flex-direction: column;
-//     background-color: black;
-// @media only screen and (min-width: 992px){
-//     flex-direction: row-reverse;
-//     background-color: red;
-//     }
-// `;
+
+const Text = styled.div`
+    align-item: start; 
+    margin: 5% 0 5% 0;
+    padding 0 5% 2% 5%;
+`;
 
 function getItems(e){
    return ( e.map((i, index)=>{
@@ -41,7 +37,15 @@ function getItems(e){
         return <Paragraph text={i.paragraph}/>
     }else if(i.image_tall){
         return <ImageTall image={i.image_tall}/>
-    }
+    }else if(i.image_full) {
+             return <ImageFull src={i.image_full}/>
+         }else if(i.text){
+             return (
+                 <Text>
+                 {getItems(i.text)}
+                 </Text>
+             )
+         }
     }));
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import logo from './images/logo.png';
 import exit from './images/exit.png';
+import { Link, withRouter } from "react-router-dom";
 
 const Wrapper = styled.figure`
     padding: 0;
@@ -17,7 +18,7 @@ const Container = styled.div`
     right: 0;
     top: 2%;
     text-align: center;
-    width: 40%;
+    width: 60%;
 @media only screen and (min-width: 992px){
     
     }
@@ -39,7 +40,7 @@ const Image = styled.img`
     background-color: #000000;
 `;
 const Logo = styled.img`
-    height: 2em;
+    height: 1em;
     width: auto;
     align-self: center;
 @media only screen and (min-width: 582px){
@@ -56,12 +57,18 @@ const Logo = styled.img`
 const Title = styled.h1`
     align-self: center;
     display: block;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ffffff;
     font-family: "Times New Roman", serif;
-    padding: 5% 0 2% 0;
+    padding: 2% 0 1% 0;
+@media only screen and (min-width: 582px){
+    font-size: 3em;
+}
+@media only screen and (min-width: 778px){
+        font-size: 3em;
+    }
 @media only screen and (min-width: 992px){
-    font-size: 4.5em;
+    font-size: 4.6em;
 }
 @media only screen and (min-width: 1199px){
     padding: 2% 0 2% 0;
@@ -71,19 +78,20 @@ const Title = styled.h1`
 `;
 const Exit = styled.img`
     display: block;
-    padding-top: 10%;
-    height: 2em;
-    width: 2.5em;
+    padding-top: 2%;
+    height: 1.5em;
+    width: 1.7em;
     align-self: center;
 @media only screen and (min-width: 582px){
     height: 2.7em;
-    width: 4ems;
+    width: 3.5em;
     }
 @media only screen and (min-width: 778px){
-    height: 4em;
-    width : 4ems
+    height: 3.5em;
+    width : 4em;
     }
 @media only screen and (min-width: 992px){
+    padding: 5% 0 2% 0;
     height: 5em;
     width: 5em;
    }
@@ -91,6 +99,9 @@ const Exit = styled.img`
         opacity: .7;
     }
 `;
+ const StyledLink = styled(Link)`
+    align-self: center;
+ `
 
 const Hero = (props) => (
 <Wrapper>
@@ -102,7 +113,7 @@ const Hero = (props) => (
                     <Content>
                         <Logo src={logo}/>
                         <Title>{d.title}</Title>
-                        <Exit src={exit}/>
+                        <StyledLink to={"/"}><Exit src={exit}/></StyledLink>
                     </Content>
               </Container>)
             }

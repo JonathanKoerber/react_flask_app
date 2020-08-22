@@ -6,10 +6,11 @@ const Image = styled.img`
     width: 100%;
     height: auto;
     overflow: hidden;
+    padding-bottom: 1em;
 `;
 
 const ImageFull = (props) =>(
-    <Image src={props.image} />
+    <Image src={props.src} />
 
 )
 

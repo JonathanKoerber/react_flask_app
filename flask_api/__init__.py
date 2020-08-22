@@ -11,7 +11,7 @@ bcrypt = Bcrypt()
 # login_manager = LoginManager()
 # todo add login add cookie handler
 # login_manager.login_view = 'users.login'
-# login_manager.login_message_category = 'info'
+# login_manager.login_message_category = 'info
 
 def create_app(Config):
     app = Flask(__name__)
