@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const Img = styled.img`
    display: none;
-    position: sticky;
+    position: sticky;y
     bottom: 4px;
     float: right;
     z-index: 99;
@@ -28,12 +28,16 @@ function toFunction(){
 const ToTop = (props) => (
     <Wrapper>
   {window.addEventListener('scroll', function () {
-                if(window.pageYOffset >= 400){
-                  document.getElementById('to_top').setAttribute("style", "display: block;")
-                }else{
-                 document.getElementById('to_top').setAttribute("style", "display: none;")
-                }
-            })}
+      var to_top = window.document.getElementById('to_top');
+      if (to_top) {
+          if (window.pageYOffset >= 400 && document.getElementsByTagName('to_top') != null) {
+              document.getElementById('to_top').setAttribute("style", "display: block;")
+          } else {
+              document.getElementById('to_top').setAttribute("style", "display: none;")
+          }
+      }
+  })
+  }
    <Img id={'to_top'} src={toTop} onClick={toFunction}/>
    </Wrapper>
 )

@@ -17,7 +17,7 @@ const Image = styled.img`
 
 const ImageTall = (props) => (
 
-        <Image  src={props.image} />
+        <Image  src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+props.image} />
 
 )
 

@@ -16,7 +16,7 @@ import ColumnThin from "./ColumnThin";
 const Wrapper = styled.section`
     align-item: start; 
     margin: 5% 0 5% 0;
-    padding 0 5% 2% 5%;
+    padding 0 0 2% 0;
 `;
 const Text = styled.div`
     align-item: start; 
@@ -33,8 +33,7 @@ const Underline = styled.section`
     border-bottom-width: 1px;
     border-bottom-style: solid;
 `;
-// todo { image_section, blue_back, image_full, reverse
-// todo image_tall image_grid image_half video
+
 function getItems(e){
    return ( e.map((i, index)=>{
          if (i.section_title) {

@@ -32,21 +32,14 @@ const ImageThree = styled.img`
 `;
 function getImages(element){
     if(element.image_one){
-        return <ImageOne src={element.image_one}/>
+        return <ImageOne src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+element.image_one}/>
     }else if(element.image_two){
-        return <ImageTwo src={element.image_two}/>
+        return <ImageTwo src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+element.image_two}/>
     }else if(element.image_three){
-        return <ImageThree src={element.image_three}/>
+        return <ImageThree src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+element.image_three}/>
     }
 }
-const Pink = styled.div`
-    background-color: #888;
-    width: 100%;
-    height: 100px;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    padding-bottom: .1em;
-`;
+
 const WeirdImageGrid = (props) => (
     <Wrapper >
         <Content>

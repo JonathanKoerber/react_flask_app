@@ -13,7 +13,7 @@ const Image = styled.img`
 
 const ImageHalf = (props) =>(
     <div>
-    <Image src={props.image.image}/>
+    <Image src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+props.image.image}/>
         </div>
 )
 

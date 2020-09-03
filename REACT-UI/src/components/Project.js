@@ -82,12 +82,13 @@ const StyleLink = styled(Link)`
 
 function Project(props) {
     const project = props.project;
+    const image = "https://react-flask-app.s3-us-west-2.amazonaws.com"+project.image;
 return(
     <Wrapper>
         <Content>
             <Title><StyleLink to={project.href} >{project.title}</StyleLink></Title>
         </Content>
-        <Image src={project.image} />
+        <Image src={image}/>
     </Wrapper>
 )
 }

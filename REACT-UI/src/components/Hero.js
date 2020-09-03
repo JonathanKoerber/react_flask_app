@@ -107,7 +107,7 @@ const Hero = (props) => (
 <Wrapper>
     {props.data.map((d, index)=>{
         if(d.image){
-        return <Image src={d.image}/>
+        return <Image src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+d.image}/>
             }else if(d.title){
             return(  <Container>
                     <Content>

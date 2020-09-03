@@ -1,67 +1,67 @@
-from flask import Blueprint, jsonify
-from flask import url_for
-import time
-from flask_api.static.Flair_JSON import flair
-from flask_api.static.PDC_JSON import pdc
-from flask_api.static.PET_JSON import pet
-from flask_api.static.OFT_JSON import oft
+from flask import Blueprint
+import json
+import boto3
+from flask_api.config import S3_BUCKET, S3_KEY, S3_SECRET
+
 
 
 web = Blueprint('web', __name__)
+s3_resource = boto3.resource(
+        "s3",
+        aws_access_key_id=S3_KEY,
+        aws_secret_access_key=S3_SECRET
+    )
 
+@web.route('/')
+def index():
+    return web.send_static_file('index.html')
 # https://www.youtube.com/watch?v=9N6a-VLBa2I
 @web.route('/api/gallery', methods=['GET', 'POST'])
-def gallery():
-    d =  {
-            "title": "Prime Day",
-            "image": "/flask_api/static/images/prime_day//pdc_desktop_hero_image.png",
-            "href": "#"
-            }
+def getGallery():
+    s3 = boto3.resource('s3')
+    obj = s3.Object(bucket_name=S3_BUCKET, key='Gallery.json')
+    response=obj.get()
+    data = response['Body'].read()
+    data = json.loads(data)
 
-    data = [
-
-         {"title": "Prime Day",
-          "image": "/images/prime_day/pdc_desktop_hero_image.png",
-          "href": "/PrimeDayConcerts"}
-    ,
-        {"title": "OFT",
-         "image": "/images/oprah_fav/oft_desktop_hero_image.png",
-         "href": "/OprahFavoriteThings"}
-         ,
-        {"title": "Flair",
-         "image": "/images/flair/flair_desktop_hero_image.png",
-         "href": "/Flair"}
-         ,
-        {"title": "Amazon Pets",
-         "image": "/images/pets/pets_desktop_hero_image.png",
-         "href": "/AmazonPets"}
-    ]
-    # todo get json object from s3
-    for d in data:
-        d['image'] = url_for('static', filename=d['image'])
-    return {"data": data}
-
-@web.route('/time')
-def get_current_time():
-    return {'time': time.time()}
+    return {'data': data}
 
 
-@web.route('/api/pdc', methods=['GET', 'PUT'])
+@web.route('/api/pdc', methods=['GET'])
 def getPrime():
+    s3 = boto3.resource('s3')
+    obj = s3.Object(bucket_name=S3_BUCKET, key='PDC.json')
+    response = obj.get()
+    data = response['Body'].read()
+    data = json.loads(data)
+    return {'data': data}
 
-    return {'data':pdc}
 
 @web.route('/api/oft', methods=['GET', 'PUT'])
 def getOft():
+    s3 = boto3.resource('s3')
+    obj = s3.Object(bucket_name=S3_BUCKET, key='OFT.json')
+    response = obj.get()
+    data = response['Body'].read()
+    data = json.loads(data)
+    return {'data': data}
 
-    return {'data':oft}
 
 @web.route('/api/flair', methods=['GET', 'PUT'])
 def getFlair():
+    s3 = boto3.resource('s3')
+    obj = s3.Object(bucket_name=S3_BUCKET, key='Flair.json')
+    response = obj.get()
+    data = response['Body'].read()
+    data = json.loads(data)
+    return {'data': data }
 
-    return {'data': flair }
 
 @web.route('/api/pets', methods=['GET', 'PUT'])
 def getPets():
-
-    return {'data': pet}
+    s3 = boto3.resource('s3')
+    obj = s3.Object(bucket_name=S3_BUCKET, key='Pet.json')
+    response = obj.get()
+    data = response['Body'].read()
+    data = json.loads(data)
+    return {'data': data}

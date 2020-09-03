@@ -12,20 +12,7 @@ const Wrapper = styled.header`
     justify-content: center;
 
 `;
-const Text = styled.h3`
-    font-size: 2em;
-    font-weight: lighter;
-    align-self: center;
-    font-family: 'Helvetica Hue', sans-serif;
-    
-`;
-const Link = styled.a`
-    text-decoration: none;
-    color: white;
-    :hover{
-        text-decoration: underline;   
-    }
-`;
+
 const Logo = styled.img`
     height: 50%;
     width: auto;

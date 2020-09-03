@@ -10,7 +10,7 @@ const Image = styled.img`
 `;
 
 const ImageFull = (props) =>(
-    <Image src={props.src} />
+    <Image src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+props.src} />
 
 )
 

@@ -24,8 +24,8 @@ const Video = (props) =>(
             }
         })}
         <Vid preload="none" controls="play/pause"
-               loop='loop' autoplay="autoplay" poster={p}>
-            <source src={s} type="video/mp4"/>
+               loop='loop' autoplay="autoplay" poster={"https://react-flask-app.s3-us-west-2.amazonaws.com"+p}>
+            <source src={"https://react-flask-app.s3-us-west-2.amazonaws.com"+s} type="video/mp4"/>
         </Vid>
     </Container>
 )

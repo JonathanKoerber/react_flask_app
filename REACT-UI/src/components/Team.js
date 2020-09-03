@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
-import ToTop from "./ToTop";
 
 const Wrapper = styled.section`
     margin: 5% 0 5% 0;
