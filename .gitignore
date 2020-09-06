@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+REACT-UI/node_modules/*
 /.pnp
 .pnp.js
 venv
@@ -12,7 +12,7 @@ flask_api/.env
 /coverage
 
 # production
-/build
+REACT-UI/build
 
 # misc
 .DS_Store
