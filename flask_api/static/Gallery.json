@@ -1,0 +1,18 @@
+[
+
+         {"title": "Prime Day",
+          "image": "/images/prime_day/pdc_desktop_hero_image.png",
+          "href": "/PrimeDayConcerts"}
+    ,
+        {"title": "OFT",
+         "image": "/images/oprah_fav/oft_desktop_hero_image.png",
+         "href": "/OprahFavoriteThings"}
+         ,
+        {"title": "Flair",
+         "image": "/images/flair/flair_desktop_hero_image.png",
+         "href": "/Flair"}
+         ,
+        {"title": "Amazon Pets",
+         "image": "/images/pets/pets_desktop_hero_image.png",
+         "href": "/AmazonPets"}
+    ]

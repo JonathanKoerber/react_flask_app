@@ -21,12 +21,12 @@ function Gallery() {
        console.log(err)
      })
    }, []);
-
+var pro = [];
     return(
         <div>
         <Heading />
               <Figure>
-                      {projects.map((p, index)=>{
+                  {projects.map((p, index)=>{
                           return <Project project={p} />
                   })}
               </Figure>

@@ -1,7 +1,4 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-
-import React from 'react';
 import styled, {css} from 'styled-components'
 import logo from './images/logo.png';
 
