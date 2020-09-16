@@ -1,8 +1,26 @@
-from flask import Blueprint
+from flask import Blueprint, current_app
 import json
 import boto3
 from flask_api.config import S3_BUCKET, S3_KEY, S3_SECRET
 
+gal = [
+
+         {"title": "Prime Day",
+          "image": "/images/prime_day/pdc_desktop_hero_image.png",
+          "href": "/PrimeDayConcerts"}
+    ,
+        {"title": "OFT",
+         "image": "/images/oprah_fav/oft_desktop_hero_image.png",
+         "href": "/OprahFavoriteThings"}
+         ,
+        {"title": "Flair",
+         "image": "/images/flair/flair_desktop_hero_image.png",
+         "href": "/Flair"}
+         ,
+        {"title": "Amazon Pets",
+         "image": "/images/pets/pets_desktop_hero_image.png",
+         "href": "/AmazonPets"}
+    ]
 
 
 web = Blueprint('web', __name__)
@@ -14,8 +32,8 @@ s3_resource = boto3.resource(
 
 @web.route('/')
 def index():
-    return web.send_static_file('index.html')
-# https://www.youtube.com/watch?v=9N6a-VLBa2I
+    return current_app.send_static_file('index.html')
+
 @web.route('/api/gallery', methods=['GET', 'POST'])
 def getGallery():
     s3 = boto3.resource('s3')
@@ -23,8 +41,8 @@ def getGallery():
     response=obj.get()
     data = response['Body'].read()
     data = json.loads(data)
-
-    return {'data': data}
+   
+    return {'data': gal}
 
 
 @web.route('/api/pdc', methods=['GET'])

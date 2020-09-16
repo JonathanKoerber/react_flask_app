@@ -1,24 +1,19 @@
 import os
 from os.path import join, dirname
-from dotenv import load_dotenv
-import flask_api.app_profile
+import flask_api.app_env as env
+import json
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 
-S3_BUCKET = os.getenv("S3_BUCKET")
-S3_KEY = os.getenv("S3_KEY")
-S3_SECRET = os.getenv("S3_SECRET_ACCESS_KEY")
+S3_BUCKET = env.constants.get("S3_BUCKET")
+S3_KEY = env.constants.get("S3_KEY")
+S3_SECRET = env.constants.get("S3_SECRET_ACCESS_KEY")
 class Config(object):
+    S3_BUCKET = env.constants.get("S3_BUCKET")
+    S3_KEY = env.constants.get("S3_KEY")
+    S3_SECRET = env.constants.get("S3_SECRET_ACCESS_KEY")
     DEBUG = False
     TESTING = False
-
-    BASEDIR = os.path.abspath(os.path.dirname(__file__))
-    SECRET_KEY = os.getenv("SECRET_KEY")
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'site.db')
-    SQLALCHEMY_TRACK_MODIFICATIONS =True
-
-
+    SECRET_KEY = env.constants.get("SECRET_KEY")
 
 class DevConfig(Config):
     DEBUG = True
@@ -26,8 +21,6 @@ class DevConfig(Config):
 
 class TestConfig(DevConfig):
     BASEDIR = os.path.abspath(os.path.dirname(__file__))
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'app_test.db')
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
     BCRYPT_LOG_ROUNDS = 4
     TESTING = True
     WTF_CSRE_ENABLE = False

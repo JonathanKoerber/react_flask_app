@@ -2,6 +2,7 @@
 
 # dependencies
 REACT-UI/node_modules/*
+REACT-UI/build/*
 /.pnp
 .pnp.js
 venv
@@ -13,7 +14,9 @@ flask_api/.env
 
 # production
 REACT-UI/build
-
+*.save
+satic_var.json
+app_env.py
 # misc
 .DS_Store
 .env.local
