@@ -15,7 +15,7 @@ flask_api/.env
 # production
 REACT-UI/build
 *.save
-satic_var.json
+static_var.json
 app_env.py
 # misc
 .DS_Store
