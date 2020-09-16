@@ -1,7 +1,0 @@
-{
-	"S3_BUCKET":"react-flask-app",
-	"S3_KEY":AKIA3RAACST5OXBK7DPH",
-	"S3_SECRET_ACCESS_KEY":"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",
-	"SECRET_KEY":"838a2fbb0c5f33c28d77e8f9c69932ba",
-	"DB_URI":"sqlite:///site.db"
-}
