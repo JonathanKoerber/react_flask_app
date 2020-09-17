@@ -6,6 +6,7 @@ REACT-UI/build/*
 /.pnp
 .pnp.js
 venv
+flask_api/venv
 env
 flask_api/.env
 
